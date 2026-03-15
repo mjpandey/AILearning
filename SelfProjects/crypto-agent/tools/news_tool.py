@@ -1,4 +1,5 @@
-def get_crypto_news():
+def get_crypto_news(input):
+    print("Input from agent:", input);
     return """
     Recent crypto news:
     - Bitcoin ETF inflows increasing

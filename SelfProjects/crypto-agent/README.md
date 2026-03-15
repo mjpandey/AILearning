@@ -34,3 +34,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 
+
+# RUN  agents individually
+python -m agents.trading_agent
+
+

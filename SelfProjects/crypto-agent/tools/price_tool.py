@@ -1,6 +1,7 @@
 import yfinance as yf
 
-def get_btc_price():
+def get_btc_price(input):
+    print("Input from agent:", input)
     btc = yf.Ticker("BTC-USD")
     data = btc.history(period="1d")
     price = data["Close"].iloc[-1]
