@@ -1,7 +1,10 @@
 from langgraph.graph import StateGraph
-from agents.trading_agent import agent, system_prompt
+from agents.trading_agent import tradingAgent
 from graphs.state import AgentState
+from utils.prompt_loader import load_prompt
 
+
+system_prompt = load_prompt()
 
 def analyze_queryAgent(state: AgentState):
 
@@ -11,7 +14,7 @@ def analyze_queryAgent(state: AgentState):
 
     analyze_query = "\n system_prompt:\n"  + system_prompt + "\n\nUser Query:\n" + query
 
-    result = agent.run(analyze_query)
+    result = tradingAgent.run(analyze_query)
     return {"result": result}
 
 graph = StateGraph(AgentState)

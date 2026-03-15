@@ -36,14 +36,15 @@ def main():
         
     elif choice == "2":
         # Based on user input, option 2 invokes the app from graphs/trading_graph.py for now
-        from graphs.trading_graph import app as multi_agent_seq_app
+        from graphs.trading_multiagent_graph import app as multi_agent_seq_app
         print("\n" + "-"*40)
         print("🚀 Running MultiAgent Sequential Flow")
         print("-"*40)
         
-        result = multi_agent_seq_app.invoke({"query": query})
+        result = multi_agent_seq_app.invoke({
+            "messages":[HumanMessage(content=query)]})
         print("\n✅ Final Result:")
-        print(result["result"])
+        print(result["final_decision"])
         
     elif choice == "3":
         from agents.multi_agent import app as conditional_workflow_app

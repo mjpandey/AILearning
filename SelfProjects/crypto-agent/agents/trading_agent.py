@@ -1,6 +1,5 @@
 from langchain.agents import initialize_agent
 from langchain.agents import Tool
-from utils.prompt_loader import load_prompt
 from langchain_openai import ChatOpenAI
 
 from tools.price_tool import get_btc_price
@@ -38,9 +37,8 @@ tools = [
     )
 ]
 
-system_prompt = load_prompt()
 
-agent = initialize_agent(
+tradingAgent = initialize_agent(
     tools,
     llm,
     agent="zero-shot-react-description",
@@ -57,5 +55,5 @@ if __name__ == "__main__":
         query = input("\nAsk something: ")
         if query == "exit":
             break
-        response = agent.invoke(query)
+        response = tradingAgent.invoke(query)
         print("\nAnswer:", response)
