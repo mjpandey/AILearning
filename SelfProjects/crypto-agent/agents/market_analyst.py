@@ -8,6 +8,7 @@ def market_analyst(state):
 
     query = state["messages"][-1].content
 
+    # ToDo - tool call should be decided by MCP not hardcoded. For now we will call all tools and pass the data to the planner agent to decide what to do with it.
     price = get_btc_price(state)
     news = get_crypto_news(state)
     sentiment = get_market_sentiment(state)
