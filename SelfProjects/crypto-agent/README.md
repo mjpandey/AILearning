@@ -21,3 +21,16 @@ User → Agent → Tools → Analysis → Recommendation
 - sentiment_tool
 - news_tool
 - portfolio_tool
+
+
+############## Commands
+
+python3 -m venv venv
+source venv/bin/activate
+
+# Do deactivate virtual env
+`deactivate`
+
+pip install -r requirements.txt
+
+
