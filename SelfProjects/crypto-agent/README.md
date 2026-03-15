@@ -39,3 +39,13 @@ pip install -r requirements.txt
 python -m agents.trading_agent
 
 
+
+
+
+
+
+
+
+
+## next improvemtn
+Convert it into a TRUE multi-agent trading system (planner + analyst + risk agent)

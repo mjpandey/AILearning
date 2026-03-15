@@ -1,5 +1,6 @@
 from langchain.agents import initialize_agent
 from langchain.agents import Tool
+from utils.prompt_loader import load_prompt
 from langchain_openai import ChatOpenAI
 
 from tools.price_tool import get_btc_price
@@ -36,6 +37,8 @@ tools = [
         description="Check portfolio exposure"
     )
 ]
+
+system_prompt = load_prompt()
 
 agent = initialize_agent(
     tools,

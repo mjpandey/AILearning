@@ -1,3 +1,2 @@
 venv
-tools/__pycache__/
-agents/__pycache__/
+__pycache__/
